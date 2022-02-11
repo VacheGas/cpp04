@@ -1,19 +1,21 @@
-#ifndef AMATERIA_HPP 
-#define AMATERIA_HPP
+#ifndef ICHARACTER_HPP 
+#define ICHARACTER_HPP
 #include <iostream>
+#include "ICharacter.hpp"
+class ICharacter;
 
 class AMateria
 {
-private:
+protected:
+            std::string type;
     
 public:
     AMateria(/* args */);
     ~AMateria();
-    AMateria(std::string const & type);
+    AMateria(std::string const & new_type);
     std::string const & getType() const;
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
-    Animal &operator=(const Animal &equal) = 0;
 };
 
 class Materia : public AMateria
@@ -23,18 +25,17 @@ private:
 public:
     Materia(/* args */);
     ~Materia();
-    std::string const & getType() const;
+    Materia(std::string const & new_type);
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
-    Animal &operator=(const Animal &equal) = 0;
 };
 
-class Ice : public Materia
+/*class Ice : public Materia
 {
 private:
-    /* data */
+   
 public:
-    Ice(/* args */);
+    Ice();
     ~Ice();
     std::string const & getType() const;
     virtual AMateria* clone() const = 0;
@@ -45,9 +46,9 @@ public:
 class Cure :  public Materia
 {
 private:
-    /* data */
+   
 public:
-    Cure(/* args */);
+    Cure();
     ~Cure();
     std::string const & getType() const;
     virtual AMateria* clone() const = 0;
@@ -55,4 +56,4 @@ public:
     Animal &operator=(const Animal &equal) = 0;
 };
 
-#endif
+#endif*/

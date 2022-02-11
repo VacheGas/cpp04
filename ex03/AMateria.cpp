@@ -4,7 +4,26 @@ AMateria::AMateria()
 {
 }
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const & new_type)
 {
-    type = 
+    this->type = new_type; 
+}
+
+AMateria::AMateria()
+{
+    this->type = "untype";
+}
+
+AMateria ::~AMateria()
+{
+}
+
+std::string const & AMateria::getType() const
+{
+    return (this->type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+    std::cout << this->type << "and name equal" << target.getName() << std::endl;
 }
