@@ -1,5 +1,5 @@
-#ifndef ICHARACTER_HPP 
-#define ICHARACTER_HPP
+#ifndef AMMAERIAL_HPP 
+#define AMMAERIAL_HPP
 #include <iostream>
 #include "ICharacter.hpp"
 class ICharacter;
@@ -55,5 +55,5 @@ public:
     virtual void use(ICharacter& target);
     Animal &operator=(const Animal &equal) = 0;
 };
-
-#endif*/
+*/
+#endif
