@@ -7,53 +7,36 @@ class ICharacter;
 class AMateria
 {
 protected:
-            std::string type;
-    
+			std::string type;   
 public:
-    AMateria(/* args */);
-    ~AMateria();
-    AMateria(std::string const & new_type);
-    std::string const & getType() const;
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
+	AMateria();
+	AMateria(std::string const & new_type);
+	~AMateria();
+	std::string const & getType() const;
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
 };
 
-class Materia : public AMateria
+class Ice : public AMateria
 {
-private:
-    /* data */
 public:
-    Materia(/* args */);
-    ~Materia();
-    Materia(std::string const & new_type);
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
+	Ice();
+	~Ice();
+	Ice(Ice const &copy);
+	Ice &operator=(const Ice &equal);
+	AMateria* clone() const;
+	void use(ICharacter& target);
 };
 
-/*class Ice : public Materia
+class Cure :  public AMateria
 {
-private:
-   
 public:
-    Ice();
-    ~Ice();
-    std::string const & getType() const;
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
-    Animal &operator=(const Animal &equal) = 0;
+	Cure();
+	~Cure();
+	Cure(Cure const &copy);
+	Cure &operator=(const Cure &equal);
+	AMateria* clone() const;
+	void use(ICharacter& target);
 };
 
-class Cure :  public Materia
-{
-private:
-   
-public:
-    Cure();
-    ~Cure();
-    std::string const & getType() const;
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
-    Animal &operator=(const Animal &equal) = 0;
-};
-*/
 #endif
