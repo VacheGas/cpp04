@@ -10,14 +10,14 @@ class IMateriaSource
               virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
     AMateria *def[4];
 public:
     MateriaSource();
     ~MateriaSource();
     MateriaSource(MateriaSource const &copy);
-	MateriaSource &operator=(const MateriaSource &equal);
+	MateriaSource &operator=(MateriaSource const &equal);
     void learnMateria(AMateria*);
     AMateria* createMateria(std::string const & type);
 };

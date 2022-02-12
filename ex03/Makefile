@@ -6,7 +6,7 @@ SRCS =	$(wildcard *.cpp)
 
 INCLUDE = -I$(INCS_DIR)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = #-Wall -Wextra -Werror
 
 OBJS 		= 	$(patsubst %.cpp, %.o, $(SRCS))
 

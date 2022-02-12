@@ -30,7 +30,7 @@ MateriaSource::MateriaSource(MateriaSource const &copy)
 	}
 }
 
-MateriaSource & MateriaSource::operator=(const MateriaSource &equal)
+MateriaSource & MateriaSource::operator=(MateriaSource const &equal)
 {
 	int i;
 

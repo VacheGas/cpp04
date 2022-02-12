@@ -46,11 +46,6 @@ Character & Character::operator=(const Character &equal)
 	return (*this);
 }
 
-std::string const & getName() const
-{
-	return (this->name);
-}
-
 void Character::equip(AMateria* m)
 {
 	int i;
@@ -59,7 +54,7 @@ void Character::equip(AMateria* m)
 	while (i < 4)
 	{
 		if(this->arr[i] == NULL)
-			arr[i] = a;
+			arr[i] = m;
 		i++;
 	}
 }
@@ -88,9 +83,11 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	int i;
+	
+	i = 0;
 	while (i < 4)
 	{
-		if (i == idx)
+		if (i == idx && this->arr[i] != NULL)
 		{
 			this->arr[i]->use(target);
 			return ;
